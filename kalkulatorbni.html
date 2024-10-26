@@ -9,22 +9,98 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Di dalam tag head, tambahkan: -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        .container {
+        body {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('https://i.ytimg.com/vi/je_gBhruTYo/maxresdefault.jpg') center/cover fixed;
             min-height: 100vh;
+            color: white;
+            padding-top: 80px; 
+        }
+
+        .container {
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 20px;
         }
 
         .card {
             width: 100%;
             max-width: 500px;
+            background: rgba(0, 0, 0, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
         }
+
+        .bmi-category {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .category-item {
+            width: 48%;
+            margin-bottom: 20px;
+        }
+
+        .category-item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .category-item h5 {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .body-types {
+            margin-top: 40px;
+        }
+
+        .body-types h4 {
+            text-align: center;
+        }
+
+        .custom-nav {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+        }
+        footer {
+            margin-top: auto;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary-color) !important;
+            transition: color 0.3s ease;
+        }
+        
     </style>
 </head>
 
 <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark custom-nav fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="fas fa-dumbbell"></i> Sport Life</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Programs</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">BMI Calculator</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="btn btn-outline-light ms-2" href="#" role="button">Subscribe</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <div class="container">
         <div class="card shadow-lg">
             <div class="card-body">
@@ -61,78 +137,127 @@
                 <div class="mt-4">
                     <canvas id="weightChart"></canvas>
                 </div>
+
+                <!-- Kategori BMI -->
+                <div class="bmi-category">
+                    <div class="category-item">
+                        <img src="https://tse3.mm.bing.net/th?id=OIP.BJ0LQMuZunyYeI_1U4g-XgHaEv&pid=Api&P=0&h=220" alt="Kurus">
+                        <h5>Kurus</h5>
+                        <p>Berat badan di bawah normal (BMI < 18.5)</p>
+                    </div>
+                    <div class="category-item">
+                        <img src="https://i.ytimg.com/vi/X0wMWp10qG4/maxresdefault.jpg" alt="Normal">
+                        <h5>Normal</h5>
+                        <p>Berat badan normal (BMI 18.5 - 24.9)</p>
+                    </div>
+                    <div class="category-item">
+                        <img src="https://i0.wp.com/satujam.com/wp-content/uploads/2015/10/gendut.jpg?fit=900%2C598&ssl=1" alt="Gemuk">
+                        <h5>Gemuk</h5>
+                        <p>Berat badan berlebih (BMI 25 - 29.9)</p>
+                    </div>
+                    <div class="category-item">
+                        <img src="https://tse3.mm.bing.net/th?id=OIP.vcr9X1Q8kKAshhTFHv8OeAHaEK&pid=Api&P=0&h=220" alt="Obesitas">
+                        <h5>Obesitas</h5>
+                        <p>Berat badan sangat berlebih (BMI ≥ 30)</p>
+                    </div>
+                </div>
+
+                <!-- Tipe Tubuh -->
+                <div class="body-types">
+                    <h4>Tipe Tubuh</h4>
+                    <p>Tipe tubuh Anda dapat dibagi menjadi tiga kategori: Ektomorf, Mesomorf, dan Endomorf.</p>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="https://tse1.mm.bing.net/th?id=OIP.yzIA0dqDGVdZ_gWHXQycPgAAAA&pid=Api&P=0&h=220" alt="Ektomorf">
+                            <h5>Ektomorf</h5>
+                            <p>Tipe tubuh yang kurus dan ramping.</p>
+                        </div>
+                        <div class="col-md-4">
+                            <img src="https://tse4.mm.bing.net/th?id=OIP.uOa3JXRrDLcwz1egEA9KFgHaKK&pid=Api&P=0&h=220" alt="Mesomorf">
+                            <h5>Mesomorf</h5>
+                            <p>Tipe tubuh yang proporsional dan atletis.</p>
+                        </div>
+                        <div class="col-md-4">
+                            <img src="https://tse4.mm.bing.net/th?id=OIP.bw8OsmF-sdKNIP0bU4wdPAAAAA&pid=Api&P=0&h=220" alt="Endomorf">
+                            <h5>Endomorf</h5>
+                            <p>Tipe tubuh yang gemuk dan berisi.</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="index.html" class="btn btn-secondary w-100 mt-4">Back To Home</a>
             </div>
         </div>
     </div>
+    <!-- Footer -->
+<footer class="bg-dark text-white py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h4>About Sport Life</h4>
+                <p>Transform your life with our expert guidance and community support.</p>  
+            </div>
+            <div class="col-md-4">
+                <h4>Quick Links</h4>
+                <ul class="list-unstyled">
+                    <li><a href="index.html" class="text-white text-decoration-none">Home</a></li>
+                    <li><a href="Programs.html" class="text-white text-decoration-none">Programs</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">Contact</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
         function calculateBMI(weight, height) {
-            let heightInMeters = height / 100;
+            let heightInMeters = height / 100; 
             let bmi = weight / (heightInMeters * heightInMeters);
             return bmi.toFixed(2);
         }
 
-        function getBMICategory(bmi) {
-            if (bmi < 18.5) {
-                return "Kurus";
-            } else if (bmi >= 18.5 && bmi < 24.9) {
-                return "Normal";
-            } else if (bmi >= 25 && bmi < 29.9) {
-                return "Gemuk";
+        function displayBMI() {
+            let weight = parseFloat(document.getElementById("weight").value);
+            let height = parseFloat(document.getElementById("height").value);
+            let bmiResult = calculateBMI(weight, height);
+            let bmiCategory = "";
+
+            if (bmiResult < 18.5) {
+                bmiCategory = "Kurus";
+            } else if (bmiResult >= 18.5 && bmiResult < 25) {
+                bmiCategory = "Normal";
+            } else if (bmiResult >= 25 && bmiResult < 30) {
+                bmiCategory = "Gemuk";
             } else {
-                return "Obesitas";
+                bmiCategory = "Obesitas";
             }
+
+            document.getElementById("bmiResult").innerText = bmiResult;
+            document.getElementById("bmiCategory").innerText = bmiCategory;
         }
 
-        function updateChart(weight) {
-            const ctx = document.getElementById('weightChart').getContext('2d');
-            const weightChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ['Berat Badan'],
-                    datasets: [{
-                        label: 'Berat Badan (kg)',
-                        data: [weight],
-                        backgroundColor: ['rgba(75, 192, 192, 0.2)'],
-                        borderColor: ['rgba(75, 192, 192, 1)'],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
-            });
-        }
-
-        document.getElementById('height').addEventListener('input', function () {
-            document.getElementById('heightValue').innerText = this.value;
+        document.getElementById("height").addEventListener("input", function () {
+            document.getElementById("heightValue").innerText = this.value;
         });
 
-        document.getElementById('weight').addEventListener('input', function () {
-            document.getElementById('weightValue').innerText = this.value;
+        document.getElementById("weight").addEventListener("input", function () {
+            document.getElementById("weightValue").innerText = this.value;
         });
 
-        document.getElementById('bmiForm').addEventListener('submit', function (event) {
-            event.preventDefault();
-
-            const age = document.getElementById('age').value;
-            const gender = document.getElementById('gender').value;
-            const height = document.getElementById('height').value;
-            const weight = document.getElementById('weight').value;
-
-            const bmi = calculateBMI(weight, height);
-            document.getElementById('bmiResult').innerText = bmi;
-
-            const bmiCategory = getBMICategory(bmi);
-            document.getElementById('bmiCategory').innerText = bmiCategory;
-            updateChart(weight);
+        document.getElementById("bmiForm").addEventListener("submit", function (e) {
+            e.preventDefault(); 
+            displayBMI(); 
         });
     </script>
 </body>
