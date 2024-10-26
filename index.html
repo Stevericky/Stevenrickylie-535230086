@@ -4,85 +4,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sport Life Theme</title>
+    <title>Sport Life - Your Fitness Journey Starts Here</title>
     <link rel="stylesheet" href="./pico.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+        }
+
+        body {
+            background-color: #1a1a1a; 
+            color: #ffffff; 
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('https://i.ytimg.com/vi/je_gBhruTYo/maxresdefault.jpg') center/cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+        .feature-card {
+            transition: transform 0.3s ease;
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .stat-card {
+            background: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .testimonial-section {
+            background: #f8f9fa;
+            padding: 4rem 0;
+        }
+
+        .custom-nav {
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .bg-light {
+            background-color: #2c3e50 !important; 
+        }
+
+        footer {
+            background: #000000; 
+        }
+    </style>
 </head>
 
 <body>
-    <nav class="container-fluid">
-        <ul>
-            <li><strong>Sport Life</strong></li>
-        </ul>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="https://irvanbelajarit.github.io/soalfrontend/about.html">About</a></li>
-            <li><a href="kalkulatorbni.html">Calcuator</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#" role="button">Subscribe</a></li>
-        </ul>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark custom-nav fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="fas fa-dumbbell"></i> Sport Life</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Programs.html">Programs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="kalkulatorbni.html">BMI Calculator</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="btn btn-outline-light ms-2" href="#" role="button">Subscribe</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
-    <main class="container">
-        <div class="grid">
-            <section>
-                <hgroup>
-                    <h2>Welcome to Sport Life</h2>
-                    <h3>Explore fitness trends, wellness, and living your best athletic life</h3>
-                </hgroup>
-                <p>
-                    Join us in our journey towards a healthier and more active lifestyle.
-                </p>
-                <figure>
-                    <img src="https://s1.bukalapak.com/bukalapak-kontenz-production/content_attachments/28121/original/olahraga_pagi_main_foto.jpg" alt="Wellness lifestyle image from Unsplash">
-                    <figcaption>q
-                        <a href="https://review.bukalapak.com/sports/olahraga-terbaik-pagi-hari-108454" target="_blank">Photo from bukalapak</a>
-                    </figcaption>
-                </figure>
-                <h3>Latest in Fitness & Wellness</h3>
-                <p>
-                    Discover the latest trends in fitness, from workout techniques to nutrition tips that keep you energized and healthy.
-                </p>
-                <figure>
-                    <img class="img-fluid" src="https://s1.bukalapak.com/bukalapak-kontenz-production/content_attachments/28121/original/olahraga_pagi_main_foto.jpg" alt="Wellness lifestyle image from Unsplash">
-                    <figcaption>
-                        <a href="https://review.bukalapak.com/sports/olahraga-terbaik-pagi-hari-108454" target="_blank">Photo from bukalapak</a>
-                    </figcaption>
-                </figure>
-                <h3>Explore Sports & Activities</h3>
-                <p>
-                    Stay ahead in sports with insights into what's trending, workout routines, and community events.
-                </p>
-            </section>
-        </div>
-    </main>
-
-    <section aria-label="Subscribe example">
-        <div class="container">
-            <article>
-                <hgroup>
-                    <h2>Join Our Sport Community</h2>
-                    <h3>Subscribe for the latest updates in fitness and sports</h3>
-                </hgroup>
-                <form class="grid">
-                    <input type="text" id="firstname" name="firstname" placeholder="First Name" aria-label="First Name" required>
-                    <input type="email" id="email" name="email" placeholder="Email" aria-label="Email" required>
-                    <button type="submit" onclick="event.preventDefault()">
-                        Subscribe
-                    </button>
-                </form>
-            </article>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container text-center">
+            <h1 class="display-3 mb-4">Transform Your Life</h1>
+            <p class="lead mb-4">Join our community and discover the best version of yourself</p>
+            <a href="Programs.html" class="btn btn-primary btn-lg me-3">Explore Programs</a>
+            <a href="#contact" class="btn btn-outline-light btn-lg">Contact Us</a>
         </div>
     </section>
 
-    <footer class="container">
-        <small><a href="#">Privacy Policy</a> •
-            <a href="#">Terms &amp; Conditions</a></small>
+    <!-- Features Section -->
+    <section class="container py-5">
+        <h2 class="text-center mb-5">Why Choose Sport Life?</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card feature-card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-heart fa-3x mb-3 text-primary"></i>
+                        <h3 class="card-title">Expert Guidance</h3>
+                        <p class="card-text">Professional trainers and nutrition experts to guide your fitness journey.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-users fa-3x mb-3 text-primary"></i>
+                        <h3 class="card-title">Community Support</h3>
+                        <p class="card-text">Join a supportive community of fitness enthusiasts and achieve goals together.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-chart-line fa-3x mb-3 text-primary"></i>
+                        <h3 class="card-title">Track Progress</h3>
+                        <p class="card-text">Advanced tracking tools to monitor your fitness journey and achievements.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <h2 class="display-4">9999+</h2>
+                        <p>Active Members</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <h2 class="display-4">1000+</h2>
+                        <p>Expert Trainers</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <h2 class="display-4">25+</h2>
+                        <p>Fitness Programs</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <h2 class="display-4">98%</h2>
+                        <p>Success Rate</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="container py-5">
+        <h2 class="text-center mb-5">Our Programs</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img src="https://source.unsplash.com/800x600/?workout" class="card-img-top" alt="Workout">
+                    <div class="card-body">
+                        <h3 class="card-title">Personal Training</h3>
+                        <p class="card-text">Customized workout plans tailored to your goals and fitness level.</p>
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="bg-primary text-white py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class=" col-md-6">
+                    <h2 class="mb-4">Stay Updated</h2>
+                    <p>Get the latest fitness tips, news, and promotions delivered straight to your inbox.</p>
+                </div>
+                <div class="col-md-6">
+                    <form class="row g-3">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="First Name">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="email" class="form-control" placeholder="Email">
+                        </div>
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-light">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>About Sport Life</h4>
+                    <p>Transform your life with our expert guidance and community support.</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="Programs.html">Programs</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
